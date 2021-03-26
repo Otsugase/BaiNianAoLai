@@ -1,7 +1,7 @@
 from appium import webdriver
 
 
-def init_driver():
+def init_driver(no_reset=True):
     desired_caps = dict()
 
     desired_caps['platformName'] = 'Android'
@@ -15,6 +15,9 @@ def init_driver():
     desired_caps['resetKeyboard'] = True
 
     #   不重置应用
-    desired_caps['noReset'] = True
+    desired_caps['noReset'] = no_reset
+
+    #   toast
+    desired_caps['automationName'] = 'Uiautomator2'
 
     return webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)

@@ -1,0 +1,5 @@
+test_search:
+  test_search_001:
+    keyword: "coach"
+  test_search_002:
+    keyword: "面膜"
